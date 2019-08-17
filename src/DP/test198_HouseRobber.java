@@ -36,7 +36,6 @@ public class test198_HouseRobber {
         memo[i]=res;
         return res;
     }
-
     //2.DP 采用迭代+备忘录  这种方法好理解！！
     public static int robb(int[] nums){
         if (nums.length==0) return 0;
