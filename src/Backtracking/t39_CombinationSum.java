@@ -89,11 +89,9 @@ public class t39_CombinationSum {
             return;
         }
         for (int i=start;i<=9;i++){
-            if (i<=n){
                 temp.add(i);
                 backtracking3(res,temp,i+1,k-1,n-i,visited);
                 temp.remove(temp.size()-1);
-            }
         }
     }
 }

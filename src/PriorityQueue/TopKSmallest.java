@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.PriorityQueue;
-
 /**
  * 牛客网习题
+ * @author xjh 2019.09.10
  */
 public class TopKSmallest {
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ public class TopKSmallest {
         for (int i=0;i<input.length;i++){
             //以下两行简化了大根堆的操作过程
 //            maxHeap.add(input[i]);
-//            if (maxHeap.size()>k) maxHeap.poll();   //出堆
+//            if (maxHeap.size()>k) maxHeap.poll();   //堆顶元素出堆
 
             //详细过程 作用等同于上面两行
             if (maxHeap.size()<k) maxHeap.add(input[i]);

@@ -1,16 +1,22 @@
 package 剑指offer;
 
+import java.util.HashSet;
+
 /**
- * 两个链表的第一个公共节点 双指针法
  * @author xjh 2019.04.17
  */
 public class 两个链表的第一个公共结点 {
-    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
-        ListNode l1=pHead1,l2=pHead2;
-        while (l1!=l2){
-            l1=(l1==null)?pHead2:l1.next;
-            l2=(l2==null)?pHead1:l2.next;
+    public ListNode FindFirstComnNode(ListNode pHead1, ListNode pHead2) {
+        ListNode p1=pHead1,p2=pHead2;
+        HashSet<ListNode> temp=new HashSet<>();
+        while (p1!=null){
+            temp.add(p1);
+            p1=p1.next;
         }
-        return l1;
+        while (p2!=null){
+            if (temp.contains(p2)) return p2;
+            p2=p2.next;
+        }
+        return null;
     }
 }

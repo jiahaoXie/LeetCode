@@ -2,7 +2,6 @@ package 剑指offer;
 
 import java.util.LinkedList;
 import java.util.List;
-
 /**
  * 圆圈中最后剩下的数 [十分经典的一道题！！]
  * @author xjh 2019.04.25
@@ -30,7 +29,7 @@ public class 孩子们的游戏 {
     //Java中LinkedList 简单解决 666
     public static int LastRemaining_Solution2(int n, int m){
         if (n==1) return 1;
-        List<Integer> list=new LinkedList<>();
+        List<Integer> list=new LinkedList<>();  //这个地方ArrayList效果一样，速度更快
         for (int i=0;i<n;i++) list.add(i);
         int start=0;
         while (list.size()>1){

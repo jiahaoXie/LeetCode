@@ -27,8 +27,7 @@ public class 二叉树的下一个结点 {
             while (pNode.left!=null) pNode=pNode.left;
             return pNode;
         }
-        while(pNode.next!=null)
-        {
+        while(pNode.next!=null){
             TreeLinkNode proot=pNode.next;
             if(proot.left==pNode)
                 return proot;

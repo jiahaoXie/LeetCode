@@ -2,6 +2,7 @@ package 剑指offer;
 import java.util.ArrayList;
 
 /**
+ * 注意题目要求是连续正数序列！！！
  * 这道题用双指针法 需要点技巧 low high分别表示和为S的连续正数序列的首尾下标指针
  * @author xjh 2019.04.22
  */

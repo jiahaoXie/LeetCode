@@ -1,7 +1,6 @@
 package 剑指offer;
 
 import java.util.Arrays;
-
 /**
  * 注意，题干中的意思是 请找出数组中任意一个重复的数字
  * @author xjh 2019.04.28
@@ -22,7 +21,7 @@ public class 数组中重复的数字 {
     }
 
     //方法2
-    public boolean duplicate2(int numbers[],int length,int [] duplication) {
+    public boolean duplicate2(int numbers[],int length,int [] duplication){
         boolean[] k = new boolean[length];
         for (int i = 0; i < k.length; i++) {
             if (k[numbers[i]] == true) {

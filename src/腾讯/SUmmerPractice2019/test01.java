@@ -1,4 +1,4 @@
-package Tencent.SUmmerPractice2019;
+package 腾讯.SUmmerPractice2019;
 
 import java.util.Scanner;
 import java.util.Stack;

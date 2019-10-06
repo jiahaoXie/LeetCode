@@ -1,15 +1,14 @@
 package 剑指offer;
 
-import java.util.TreeMap;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author xjh 2019.04.16
- * 这题可用TreeMap(红黑树) 或者LinkedHashMap(内部维护一个双向链表 保证顺序)
- * 不能用HashMap 因为数据是按照hashcode值存储的 内部无序
  */
 public class 第一个只出现一次的字符 {
     public static int FirstNotRepeatingChar(String str) {
-        TreeMap<Character,Integer> map=new TreeMap<>();
+        Map<Character,Integer> map=new HashMap<>();
         for (char c:str.toCharArray()){
             if (!map.containsKey(c)) map.put(c,1);
             else map.put(c,map.get(c)+1);

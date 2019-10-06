@@ -1,7 +1,6 @@
 package 剑指offer;
 
 import java.util.Stack;
-
 /**
  * 第一个序列是栈的压入序列 判断第二个序列是否为栈的弹出顺序
  * @author xjh 2019.04.10
@@ -11,6 +10,7 @@ public class 栈的压入与弹出序列 {
         Stack<Integer> s = new Stack<>();
         for (int i=0,j=0;i<pushA.length;){
             s.push(pushA[i++]);
+            //最核心的代码就是下面这个while循环
             while (j<popA.length&&s.peek()==popA[j]){
                 s.pop();
                 j++;

@@ -20,7 +20,21 @@ public class 整数中1出现的次数 {
         return count;
     }
 
+    //下面这种方法是最垃圾的方法，在面试中如果没有办法了 先实现出来，再想优化的方法
+    public static int NumberOf1Between7AndN_Solution(int n) {
+        if (n<=0) return 0;
+        int count=0;
+        for (int i=0;i<=n;i++){
+            int tmp=i;
+            while (tmp!=0){
+                if (tmp%10==7)count++;
+                tmp=tmp/10;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
-        System.out.println(NumberOf1Between1AndN_Solution(100));
+        System.out.println(NumberOf1Between7AndN_Solution(70));
     }
 }

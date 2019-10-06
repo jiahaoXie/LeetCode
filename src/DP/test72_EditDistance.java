@@ -51,8 +51,8 @@ public class test72_EditDistance {
         Scanner in=new Scanner(System.in);
 //        String w1=in.nextLine();
 //        String w2=in.nextLine();
-        String w1="horse";
-        String w2="ros";
+        String w1="abc";
+        String w2="abd";
         System.out.println(minDistance(w1,w2));
 //        System.out.println(min(6,8,10));
     }

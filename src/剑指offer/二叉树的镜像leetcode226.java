@@ -11,6 +11,7 @@ public class 二叉树的镜像leetcode226 {
         mirror(root);
     }
     public TreeNode mirror(TreeNode root){
+        if(root==null) return null;
         TreeNode left=root.left;
         root.left=mirror(root.right);
         root.right=mirror(left);
@@ -18,6 +19,7 @@ public class 二叉树的镜像leetcode226 {
     }
 
     public TreeNode Mirror2(TreeNode root) {
+        if(root==null) return null;
         TreeNode temp=root.left;
         root.left=root.right;
         root.right=temp;

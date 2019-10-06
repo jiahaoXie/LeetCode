@@ -2,7 +2,6 @@ package 剑指offer;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
 /**
  * 字符串排列 这道题 有点难度！！
  * @author xjh 2019.04.12
@@ -42,5 +41,4 @@ public class 字符串的排列 {
         char temp=s[i];
         s[i]=s[j];s[j]=temp;
     }
-
 }

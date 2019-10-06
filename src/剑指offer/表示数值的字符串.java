@@ -1,11 +1,10 @@
 package 剑指offer;
-
 /**
  * @author xjh 2019.04.29
  * 边界条件：
  * 1.e必须有数字后面的数字不能有小数点
  * 2.除了e E不能有其他英文字母
- * 3.+-号要出现再字符最开始 要么只能出现再e后面一位
+ * 3.+-要出现在字符最开始 要么只能出现再e后面一位
  * 4. e后面不能再接小数点 小数点在字符串中不能出现两次
  */
 public class 表示数值的字符串 {
@@ -28,6 +27,6 @@ public class 表示数值的字符串 {
     }
 
     public static void main(String[] args) {
-        System.out.println(isNumeric("-123e3".toCharArray()));
+        System.out.println(isNumeric("123e+3".toCharArray()));
     }
 }

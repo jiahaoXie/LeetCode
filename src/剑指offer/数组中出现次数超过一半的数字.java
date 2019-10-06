@@ -3,7 +3,6 @@ package 剑指offer;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
 public class 数组中出现次数超过一半的数字 {
     //方法1 hashmap保存key/value值
     public int MoreThanHalfNum_Solution(int [] array) {

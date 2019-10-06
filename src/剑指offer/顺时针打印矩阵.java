@@ -25,7 +25,7 @@ public class 顺时针打印矩阵 {
 
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
-        int[][] matrix=new int[5][1];
+        int[][] matrix=new int[4][4];
         for (int i=0;i<matrix.length;i++){
             for (int j=0;j<matrix[0].length;j++)
                 matrix[i][j]=in.nextInt();

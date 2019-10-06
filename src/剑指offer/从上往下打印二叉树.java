@@ -3,7 +3,6 @@ package 剑指offer;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-
 /**
  * 从上往下打印二叉树—层次遍历或者说是BFS
  * @author xjh 2019.04.10

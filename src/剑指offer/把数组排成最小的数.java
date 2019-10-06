@@ -1,5 +1,4 @@
 package 剑指offer;
-
 import java.util.Arrays;
 import java.util.Comparator;
 /**
@@ -46,7 +45,6 @@ public class 把数组排成最小的数 {
                 return s1.compareTo(s2);    //升序排序
             }
         });
-
         for (String s:str)
             sb.append(s);
         return sb.toString();
@@ -54,6 +52,6 @@ public class 把数组排成最小的数 {
 
     public static void main(String[] args) {
         int[] number={3,32,321};
-        System.out.println(PrintMinNumber(number));
+        System.out.println(PrintMinNumber2(number));
     }
 }

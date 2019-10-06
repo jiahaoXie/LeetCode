@@ -9,7 +9,6 @@ package 剑指offer;
  * 前一部分是根节点的左子树都小于x 后一部分是右子树 都大于x
  * 分片之后 重复相同操作，递归解决
  */
-
 public class 二叉搜索树的后续遍历序列 {
     public static boolean VerifySquenceOfBST(int [] sequence) {
         if (sequence.length==0) return false;
@@ -21,7 +20,6 @@ public class 二叉搜索树的后续遍历序列 {
         while (i>low&&a[i-1]>a[high]) { //从后往前遍历 右子树的节点值 都比根节点大
             i--;  //结束循环时 i是根节点右子树的最下层的左叶子节点
         }
-
         for (int j=low;j<=i-1;j++){
             //从前往后遍历 左子树的所有节点 都应该比根节点值 小
             if (a[j]>a[high]) return false;

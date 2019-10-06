@@ -1,4 +1,4 @@
-package Tencent.SummerPractice2017;
+package 腾讯.SummerPractice2017;
 
 import java.util.Scanner;
 

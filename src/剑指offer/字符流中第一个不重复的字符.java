@@ -1,8 +1,6 @@
 package 剑指offer;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 /**
  * @author xjh 2019.04.29
  */
@@ -26,18 +24,14 @@ public class 字符流中第一个不重复的字符 {
     //Insert one char from stringstream
     static String s="";
     static char[] hash=new char[256];
-    public static void Insert2(char ch)
-    {
+    public static void Insert2(char ch){
         s+=ch;
         hash[ch]++;
     }
     //return the first appearence once char in current stringstream
-    public static char FirstAppearingOnce2()
-    {
-
+    public static char FirstAppearingOnce2(){
         int size=s.length();
-        for(int i=0;i<size;++i)
-        {
+        for(int i=0;i<size;++i){
             if(hash[s.charAt(i)]==1)
                 return s.charAt(i);
         }
@@ -50,6 +44,5 @@ public class 字符流中第一个不重复的字符 {
             Insert2(c);
             System.out.print(FirstAppearingOnce2()+" ");
         }
-
     }
 }

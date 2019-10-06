@@ -15,7 +15,6 @@ class RandomListNode {
     int label;
     RandomListNode next = null;
     RandomListNode random = null;
-
     RandomListNode(int label) {
         this.label = label;
     }
@@ -42,7 +41,6 @@ public class 复杂链表的复制 {
                 //因为A.random=C 所以A1.random=C1
             currentNode=currentNode.next.next;
         }
-
         //3.拆分链表
         currentNode=pHead;
         RandomListNode pCloneNode=pHead.next;

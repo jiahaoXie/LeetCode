@@ -1,5 +1,4 @@
 package 剑指offer;
-
 /**
  * 输入一颗二叉搜索树，将其转换成为一个排序的双向链表。
  * @author xjh 2019.04.12
@@ -27,5 +26,4 @@ public class 二叉搜索树与双向链表 {
         }
         inOrder(root.right);
     }
-
 }
