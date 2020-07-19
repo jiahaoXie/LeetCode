@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 public class t23合并k个有序链表 {
     //方法1 利用小根堆首先存储k个链表的头节点，自动排好序后 将最小的元素去除加入结果链表中，
     // 然后将取出链表的下一个元素加入小根堆中，下次依旧做同样的操作。以此类推，直到堆中没有元素
-    //时间复杂度是O(nlogk) 空间复杂度为O(k),因为创建了一个额外的大小为k的小根堆
+    // 时间复杂度是O(nlogk) 空间复杂度为O(k),因为创建了一个额外的大小为k的小根堆
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
         PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {

@@ -4,7 +4,7 @@ import java.util.HashMap;
  * leetcode 146 LRU Cache
  *
  * @author xjh 2019.01.22
- * 实现LRU缓存 关键在于使用双向链表存储每个节点信息 是的可以快速移除节点信息
+ * 实现LRU缓存 关键在于使用双向链表存储每个节点信息 使得可以快速移除节点信息
  * 使用HashMap存储key/value对
  * 这道题难度很高,思想不难 难的是在于实现 有点难想到把节点信息作为value保存在hashmap中
  */

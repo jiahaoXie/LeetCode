@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * 滑动窗口的最大值
+ * 滑动窗口的最大值  这道题有难度
  * @author xjh 2019.04.30\
  * 这道题 可用队列来做 使用linkedList来实现
     滑动窗口应当是队列，但为了得到滑动窗口的最大值，队列序可以从两端删除元素，因此使用双端队列。

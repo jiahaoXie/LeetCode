@@ -24,7 +24,7 @@ public class t83_RemoveDuplicatesfromSortedList {
         return head;
     }
 
-    //代码1  leetcode这个答案写的简化 但可能有点难理解
+    //代码1  leetcode这个答案写的简化
     public static ListNode deleteDuplicates82(ListNode head) {
         if (head==null) return null;
         ListNode dump=new ListNode(0);

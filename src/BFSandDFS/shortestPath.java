@@ -10,7 +10,6 @@ import java.util.Queue;
 public class shortestPath {
     final int[][] direction={{-1,0},{1,0},{0,1},{0,-1}};  //表示移动的四个方向
     static int pathLength=0;
-
     /**
      * BFS 遍历得到最短路径
      * @param grids
@@ -78,7 +77,7 @@ public class shortestPath {
         int[][] grids={{1,1,0,1},
                         {1,0,1,0},
                         {1,1,1,1},
-                        {1,0,1,1}}; //初始化的数组中 0表示泵走 1表示可以走
+                        {1,0,1,1}}; //初始化的数组中 0表示不能走 1表示可以走
         int bfsMinLen=xjh.bfsMinPath(grids,2,1);
         System.out.println("bfs minlen: "+bfsMinLen);
         int dfsMinLen=xjh.dfsMinPath(grids,2,1);

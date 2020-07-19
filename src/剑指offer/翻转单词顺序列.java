@@ -7,6 +7,7 @@ public class 翻转单词顺序列 {
     public static String ReverseSentence(String str) {
         if (str.trim().equals(" ")) return str;
             //trim()的作用是去掉字符串两端的多余空格，中间空格不会删掉
+//        if(str.equals(" ")) return " ";
         String[] s=str.split(" ");
         StringBuilder sb=new StringBuilder();
         for (int i=s.length-1;i>=0;i--){

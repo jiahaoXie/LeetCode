@@ -28,7 +28,7 @@ public class 把数组排成最小的数 {
     }
 
     //方法2 先把整形数组转换成为String数组 然后将String数组排序，最后将排序好的字符串数组拼接
-    //方法1 和方法2 差不多
+    //时间复杂度低一些
     public static String PrintMinNumber2(int [] numbers) {
         if (numbers.length==0) return "";
         int n=numbers.length;
