@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:/javaCode/Cuckoo/Cuckoo.iml" filepath="D:/javaCode/Cuckoo/Cuckoo.iml" />
       <module fileurl="file://$PROJECT_DIR$/../DataStructureAndAlgorithm/DataStructureAndAlgorithm.iml" filepath="$PROJECT_DIR$/../DataStructureAndAlgorithm/DataStructureAndAlgorithm.iml" />
-      <module fileurl="file://D:/javaCode/JavaSE/JavaSE.iml" filepath="D:/javaCode/JavaSE/JavaSE.iml" />
       <module fileurl="file://$PROJECT_DIR$/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCode.iml" />
-      <module fileurl="file://D:/javaCode/gc/gc.iml" filepath="D:/javaCode/gc/gc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nowcoder/nowcoder.iml" filepath="$PROJECT_DIR$/nowcoder/nowcoder.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../scalaCode/scalaCode.iml" filepath="$PROJECT_DIR$/../scalaCode/scalaCode.iml" />
     </modules>
   </component>
 </project>
