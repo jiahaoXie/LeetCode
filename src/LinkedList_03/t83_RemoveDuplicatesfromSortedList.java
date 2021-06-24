@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList_03;
 
 /**
  * leetcode 83 Remove Duplicates from Sorted List

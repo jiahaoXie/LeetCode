@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList_03;
 
 /**
  * 头条面试题：一个链表，奇数位升序偶数位降序，让链表变成升序的。

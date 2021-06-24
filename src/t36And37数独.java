@@ -3,6 +3,7 @@ import java.util.HashSet;
 /**
  * leetcode 36 Valid Sudoku
  * leetcode 37. Sudoku Solver
+ *
  * @author xjh 2018.12.24
  */
 public class t36And37数独 {
@@ -54,21 +55,22 @@ public class t36And37数独 {
     //第一种方法 采用递归的方法解决 37题填入通过
     public void solveSudoku(char[][] board) {
         //返回值是true or false
-        if (board.length==0) return;
+        if (board.length == 0) return;
         Input(board);
     }
-    public boolean Input(char[][] board){
+
+    public boolean Input(char[][] board) {
         //依次往二维数组中的空格输入字符
-        for (int i=0;i<9;i++){
-            for (int j=0;j<9;j++){
-                if (board[i][j]=='.'){
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (board[i][j] == '.') {
                     //当前位置为空字符
-                    for (char c='1';c<='9';c++){
-                        if (IsValid(board,i,j,c)){
+                    for (char c = '1'; c <= '9'; c++) {
+                        if (IsValid(board, i, j, c)) {
                             //用于判断是否在当前位置有效 有效则填入该字符
-                            board[i][j]=c;
-                            if(Input(board)) return true;
-                            else board[i][j]='.';   //否则回溯 之前位置的字符重新填写
+                            board[i][j] = c;
+                            if (Input(board)) return true;
+                            else board[i][j] = '.';   //否则回溯 之前位置的字符重新填写
                         }
                     }
                     return false;
@@ -77,13 +79,15 @@ public class t36And37数独 {
         }
         return true;
     }
+
     //判断输入是否合法
-    public boolean IsValid(char[][] board,int i,int j,char c){
-        for (int k=0;k<board.length;k++){
-            if (board[i][k]!='.'&&board[i][k]==c) return false; //同列
-            if (board[k][j]!='.'&&board[k][j]==c) return false; //同行
+    public boolean IsValid(char[][] board, int i, int j, char c) {
+        for (int k = 0; k < board.length; k++) {
+            if (board[i][k] != '.' && board[i][k] == c) return false; //同列
+            if (board[k][j] != '.' && board[k][j] == c) return false; //同行
             //3X3的九宫格内
-            if (board[3*(i/3)+k/3][3*(j/3)+k%3]!='.'&&board[3*(i/3)+k/3][3*(j/3)+k%3]==c) return false;
+            if (board[3 * (i / 3) + k / 3][3 * (j / 3) + k % 3] != '.' && board[3 * (i / 3) + k / 3][3 * (j / 3) + k % 3] == c)
+                return false;
         }
         return true;
     }
