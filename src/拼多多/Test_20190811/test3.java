@@ -12,17 +12,19 @@ import java.util.Scanner;
  */
 public class test3 {
     public static int S;
+
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int n=in.nextInt();
-        int s=in.nextInt();
-        S=s;
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int s = in.nextInt();
+        S = s;
         List<List<Integer>> combinations = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
         backtracking(n, s, 1, path, combinations);
-        System.out.println(combinations.size()%100000007);
+        System.out.println(combinations.size() % 100000007);
     }
-    private static void backtracking(int k, int n, int start,List<Integer> tempCombination, List<List<Integer>> combinations) {
+
+    private static void backtracking(int k, int n, int start, List<Integer> tempCombination, List<List<Integer>> combinations) {
         if (k == 0 && n == 0) {
             combinations.add(new ArrayList<>(tempCombination));
             return;
@@ -30,7 +32,7 @@ public class test3 {
         if (k == 0 || n == 0) {
             return;
         }
-        for (int i = start; i <S; i++) {
+        for (int i = start; i < S; i++) {
             tempCombination.add(i);
             backtracking(k - 1, n - i, i + 1, tempCombination, combinations);
             tempCombination.remove(tempCombination.size() - 1);

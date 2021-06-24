@@ -11,11 +11,11 @@ public class 邮箱添加掩码防抓取 {
         String latter = s.substring(flag);
         char[] c = pre.toCharArray();
         char[] temp = "MASK".toCharArray();
-        StringBuilder st=new StringBuilder();
+        StringBuilder st = new StringBuilder();
         for (int i = 0; i < c.length; i++) {
             if (i == c.length - 1)
                 st.append(c[i]);
-            else st.append(c[i]+""+temp[i%temp.length]);
+            else st.append(c[i] + "" + temp[i % temp.length]);
         }
         System.out.println(st.toString() + latter);
 

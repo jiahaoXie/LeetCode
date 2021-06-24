@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 /**
  * leetcode 169. Majority Element
+ *
  * @author xjh  2018.12.10
  */
 public class Test169 {
@@ -23,6 +24,6 @@ public class Test169 {
 
         //2.先将数组排序 因为众数超过n/2个 所以直接输出排序之后的中间位置的元素即可
         Arrays.sort(nums);
-        return nums[(int)(nums.length / 2)];
+        return nums[(int) (nums.length / 2)];
     }
 }

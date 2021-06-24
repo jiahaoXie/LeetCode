@@ -2,7 +2,8 @@ package 头条;
 
 /**
  * 旋转数组中查找指定值 字节跳动暑期实习二面第二道题（也是leetcode 33题）
-    * 例如：递增数组[1,2,3,4,5]，变化为[5,6,1,2,3,4]， 给定K，判断是否存在，并返回其索引位置
+ * 例如：递增数组[1,2,3,4,5]，变化为[5,6,1,2,3,4]， 给定K，判断是否存在，并返回其索引位置
+ *
  * @author xjh 2019.03.23
  * 思路：这是一道需要技巧的二分查找  难！！
  * 1.a[mid]>a[low] mid左边的数组是有序的；接着判断 当k<a[mid] && k>=a[low] ,可以在左边数组查找，否则在右边数组中查找
@@ -10,39 +11,39 @@ package 头条;
  */
 public class BSearch02 {
     public static void main(String[] args) {
-        BSearch02 xjh=new BSearch02();
-        int[] a={7,9,12,15,0,3,5,6};
-        int[] b={3,1};
-        System.out.println(xjh.findK2(b,1));
+        BSearch02 xjh = new BSearch02();
+        int[] a = {7, 9, 12, 15, 0, 3, 5, 6};
+        int[] b = {3, 1};
+        System.out.println(xjh.findK2(b, 1));
     }
 
     //奇怪的是，这里有样例通过不了
-    public int findK(int[] a,int k){
-        int begin=0;
-        int end=a.length-1;
-        while (begin<=end){
-            int mid=begin+(end-begin)/2;
-            if (k==a[mid]) return mid;
-            if (a[mid]>a[begin]){//mid左边是有序的
-                if (k>=a[begin]&&k<a[mid]) end=mid-1;
-                else begin=mid+1;
-            }else {//后半部分 是递增数组
-                if (k>a[mid]&&k<=a[end]) begin=mid+1;
-                else end=mid-1;
+    public int findK(int[] a, int k) {
+        int begin = 0;
+        int end = a.length - 1;
+        while (begin <= end) {
+            int mid = begin + (end - begin) / 2;
+            if (k == a[mid]) return mid;
+            if (a[mid] > a[begin]) {//mid左边是有序的
+                if (k >= a[begin] && k < a[mid]) end = mid - 1;
+                else begin = mid + 1;
+            } else {//后半部分 是递增数组
+                if (k > a[mid] && k <= a[end]) begin = mid + 1;
+                else end = mid - 1;
             }
         }
         return -1;
     }
 
     //网上大佬的答案
-    public int findK2(int[] num,int k){
-        int begin=0,end=num.length-1;
-        while (begin<end){
-            int mid=begin+(end-begin)/2;
-            if (num[0]>k^(num[0]>num[mid])^(k>num[mid])) begin=mid+1;
-            else end=mid;
+    public int findK2(int[] num, int k) {
+        int begin = 0, end = num.length - 1;
+        while (begin < end) {
+            int mid = begin + (end - begin) / 2;
+            if (num[0] > k ^ (num[0] > num[mid]) ^ (k > num[mid])) begin = mid + 1;
+            else end = mid;
         }
-        return begin==end&&num[begin]==k?begin:-1;
+        return begin == end && num[begin] == k ? begin : -1;
     }
     /**
      * 以二分搜索为基本思路

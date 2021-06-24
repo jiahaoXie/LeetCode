@@ -25,17 +25,17 @@ public class 跳盒子 {
     }
 
     private static int solution(int[] input) {
-        if (input.length==0) return -1;
-        if (input.length==1) return 0;
-        int[] dp=new int[input.length+1];
-        Arrays.fill(dp,Integer.MAX_VALUE);
-        dp[1]=0;
-        for (int i=2;i<dp.length;i++){
-            for (int j=1;j<i;j++){
-                if (input[i-j-1]>=j) dp[i]=Math.min(dp[i],dp[i-j]+1);
+        if (input.length == 0) return -1;
+        if (input.length == 1) return 0;
+        int[] dp = new int[input.length + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[1] = 0;
+        for (int i = 2; i < dp.length; i++) {
+            for (int j = 1; j < i; j++) {
+                if (input[i - j - 1] >= j) dp[i] = Math.min(dp[i], dp[i - j] + 1);
             }
         }
-        if (dp[input.length]!=Integer.MAX_VALUE) return dp[input.length];     // TODO Write your code here
+        if (dp[input.length] != Integer.MAX_VALUE) return dp[input.length];     // TODO Write your code here
         else return -1;
     }
 }

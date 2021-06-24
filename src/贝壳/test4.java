@@ -31,15 +31,15 @@ public class test4 {
                 memory[i + 1] += dif + 1;
             }
         }
-        int sub=0;
-        if(t != 0 && memory[t] == memory[t-1])
+        int sub = 0;
+        if (t != 0 && memory[t] == memory[t - 1])
             res += 1;
-        for (int j=memory.length-3;j>=0;j--){
-            int k=j+2;
-            if(memory[j]-memory[k]>1){
-                sub=memory[j+1]-(memory[k]+1);
-                memory[j+1]=memory[k]+1;
-                res-=sub;
+        for (int j = memory.length - 3; j >= 0; j--) {
+            int k = j + 2;
+            if (memory[j] - memory[k] > 1) {
+                sub = memory[j + 1] - (memory[k] + 1);
+                memory[j + 1] = memory[k] + 1;
+                res -= sub;
             }
         }
         System.out.println(res);

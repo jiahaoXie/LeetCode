@@ -1,4 +1,5 @@
 package 腾讯.t20190901;
+
 import java.util.Scanner;
 
 public class 花匠小Q {
@@ -27,6 +28,7 @@ public class 花匠小Q {
             System.out.println(res);
         }
     }
+
     /**
      * 组合数,C(n,m) = A(n,m)/m!
      */

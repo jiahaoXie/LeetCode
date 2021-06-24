@@ -1,5 +1,6 @@
 /**
  * leetcode 208 Implement Trie (Prefix Tree)
+ *
  * @author xjh 2018.12.25
  */
 class TrieNode {
@@ -9,6 +10,7 @@ class TrieNode {
 
     public TrieNode() {
     }
+
     TrieNode(char c) {
         TrieNode node = new TrieNode();
         node.value = c;
@@ -17,6 +19,7 @@ class TrieNode {
 
 class Trie {
     TrieNode root;
+
     /**
      * Initialize your data structure here.
      */
@@ -25,6 +28,7 @@ class Trie {
         root.value = ' '; //Trie树的根节点不包含有效字符
 
     }
+
     /**
      * Inserts a word into the trie.
      */
@@ -38,6 +42,7 @@ class Trie {
         }
         t.isWord = true;
     }
+
     /**
      * Returns if the word is in the trie.
      */
@@ -51,6 +56,7 @@ class Trie {
         }
         return t.isWord;    //search函数和startWith函数最大的区别在于后买你返回的是t.isWord
     }
+
     /**
      * Returns if there is any word in the trie that starts with the given prefix.
      */
@@ -72,8 +78,8 @@ public class test208_ImplementTrie {
         obj.insert("word");
 //        obj.insert("he");
         obj.insert("hello");
-        System.out.println("search word:"+obj.search("word"));
-        System.out.println("search he:"+obj.search("he"));
-        System.out.println("startwith he:"+obj.startsWith("he"));
+        System.out.println("search word:" + obj.search("word"));
+        System.out.println("search he:" + obj.search("he"));
+        System.out.println("startwith he:" + obj.startsWith("he"));
     }
 }

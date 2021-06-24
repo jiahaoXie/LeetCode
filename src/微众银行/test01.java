@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class test01 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int n = s.nextInt(),m=s.nextInt();
-        if(n==1){
+        int n = s.nextInt(), m = s.nextInt();
+        if (n == 1) {
             System.out.println(n);
             return;
         }
@@ -24,7 +24,7 @@ public class test01 {
                 if (countNum == m) {
                     countNum = 0;
                     arr[index] = false;
-                    System.out.print((index+1)+" ");
+                    System.out.print((index + 1) + " ");
                     leftCount--;
                 }
             }
@@ -36,7 +36,7 @@ public class test01 {
         System.out.println();
         for (int i = 0; i < n; i++) {
             if (arr[i] == true) {
-                System.out.println(i+1);
+                System.out.println(i + 1);
             }
         }
     }

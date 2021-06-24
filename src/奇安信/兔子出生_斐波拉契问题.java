@@ -7,15 +7,15 @@ import java.util.Scanner;
 
 public class 兔子出生_斐波拉契问题 {
     public static void main(String[] args) {
-        Scanner  in=new Scanner(System.in);
-        int n=in.nextInt();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
         System.out.println(compute(n));
     }
 
-    public static long compute(int x){
-        if(x == 1 || x == 2||x==3||x==4){
+    public static long compute(int x) {
+        if (x == 1 || x == 2 || x == 3 || x == 4) {
             return 1;
-        }else{
+        } else {
             return compute(x - 1) + compute(x - 4);
         }
     }

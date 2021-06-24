@@ -1,5 +1,6 @@
 /**
  * leetcode 69 Sqrt(x)
+ *
  * @author xjh 2018.12.25
  */
 public class test69 {
@@ -9,16 +10,15 @@ public class test69 {
 //        return (int)n;
 
         //2.利用二分查找的方法
-        if(x==0||x==1) return x;
-        int low=1,high=x,result=0;
-        while (low<=high){
-            int mid=low+(high-low)/2;
-            if(mid==x/mid) return mid;
-            else if(mid<x/mid){
-                low=mid+1;
-                result=mid; //考虑到x的平方根很大可能是double 这里输出的是int 所以输出值极大可能为m^2<=x
-            }
-            else high=mid-1;
+        if (x == 0 || x == 1) return x;
+        int low = 1, high = x, result = 0;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (mid == x / mid) return mid;
+            else if (mid < x / mid) {
+                low = mid + 1;
+                result = mid; //考虑到x的平方根很大可能是double 这里输出的是int 所以输出值极大可能为m^2<=x
+            } else high = mid - 1;
         }
         return result;
 
@@ -30,7 +30,7 @@ public class test69 {
     }
 
     public static void main(String[] args) {
-        int s=mySqrt(8);
+        int s = mySqrt(8);
         System.out.println(s);
     }
 }

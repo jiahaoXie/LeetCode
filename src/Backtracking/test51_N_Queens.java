@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 51. N-Queens 这道题难！！
+ *
  * @author xjh  2018.12.19
  */
 public class test51_N_Queens {
@@ -66,28 +67,28 @@ public class test51_N_Queens {
             }
         }
         for (int a = i - 1, b = j - 1; a >= 0 && b >= 0; a--, b--) {  //那(具体说是左上部分)
-            if (broad[a][b] == 'Q'){
+            if (broad[a][b] == 'Q') {
                 return false;
             }
 
         }
         for (int a = i + 1, b = j - 1; a < broad.length && b >= 0; a++, b--) { //撇（左下部分）
-            if (broad[a][b] == 'Q'){
+            if (broad[a][b] == 'Q') {
                 return false;
             }
         }
         return true;
     }
 
-    public void DFS(int cur,int n,int[] C,List<List<String>> list,int[][] vis){
-        if (cur==n){
+    public void DFS(int cur, int n, int[] C, List<List<String>> list, int[][] vis) {
+        if (cur == n) {
             //遍历结束
-            List<String> s=new ArrayList<>();
-            int p=0;
-            for (int row=0;row<n;row++){
-                StringBuilder ssb=new StringBuilder();
-                for (int col=0;col<n;col++){
-                    if (col==C[p]) ssb.append('Q');
+            List<String> s = new ArrayList<>();
+            int p = 0;
+            for (int row = 0; row < n; row++) {
+                StringBuilder ssb = new StringBuilder();
+                for (int col = 0; col < n; col++) {
+                    if (col == C[p]) ssb.append('Q');
                         //这里我好奇的是 C[n]是一个刚初始化的数组 里面的数值全是0啊，这有什么意义？？
                     else ssb.append('.');
                 }
@@ -96,17 +97,17 @@ public class test51_N_Queens {
             }
             list.add(s);
             return;
-        }else {
+        } else {
             //对于正在遍历的每一行  依次访问vis二位数组中对应下标元素
-            for (int i=0;i<n;i++){
-                if (vis[0][i]==0&&vis[1][cur+i]==0&&vis[2][cur-i+n]==0){
+            for (int i = 0; i < n; i++) {
+                if (vis[0][i] == 0 && vis[1][cur + i] == 0 && vis[2][cur - i + n] == 0) {
                     //上述依次表示同行 反对角线 对角线(cur-i+n 加n是为了防止下标出现负数)是否会有冲突
-                    C[cur]=i;   //选择i列
+                    C[cur] = i;   //选择i列
                     //设置i对应的列 &反对角线& 的主对角线
-                    vis[0][i]=vis[1][cur+i]=vis[2][cur-i+n]=1;
+                    vis[0][i] = vis[1][cur + i] = vis[2][cur - i + n] = 1;
 
-                    DFS(cur+1,n,C,list,vis);
-                    vis[0][i]=vis[1][cur+i]=vis[2][cur-i+n]=0;
+                    DFS(cur + 1, n, C, list, vis);
+                    vis[0][i] = vis[1][cur + i] = vis[2][cur - i + n] = 0;
                 }
             }
         }

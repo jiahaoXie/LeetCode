@@ -3,7 +3,7 @@ package 京东;
 import java.util.*;
 
 public class 合唱队形 {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();// N名学生
         int[] req = new int[N];
@@ -21,7 +21,7 @@ public class 合唱队形 {
             sortList.add(help);
         }
         Collections.sort(sortList, new Comparator<Help>() {
-           @Override
+            @Override
             public int compare(Help h1, Help h2) {
                 return h1.getValue() - h2.getValue();//升序
             }

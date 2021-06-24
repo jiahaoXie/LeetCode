@@ -8,18 +8,19 @@ import java.util.Scanner;
  */
 public class test2 {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int n=in.nextInt();
-        int [] a=new int[n];
-        for (int i=0;i<n;i++){
-            a[i]=in.nextInt();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = in.nextInt();
         }
 
         System.out.println(DPToBinarySearch(a));
     }
-    public static int DPToBinary(int[] a){
-        int n=a.length;
-        long[] dp=new long[n];
+
+    public static int DPToBinary(int[] a) {
+        int n = a.length;
+        long[] dp = new long[n];
         int len = 0;
         for (long num : a) {
             int i = Arrays.binarySearch(dp, 0, len, num);
@@ -36,6 +37,7 @@ public class test2 {
 
     /**
      * 这个dp加二分查找的方法容易理解一些
+     *
      * @param nums
      * @return
      */

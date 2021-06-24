@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class 字符环 {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        String t=in.nextLine();
-        String[] a=t.split(" ");
+        Scanner in = new Scanner(System.in);
+        String t = in.nextLine();
+        String[] a = t.split(" ");
 
         System.out.println("false");
     }

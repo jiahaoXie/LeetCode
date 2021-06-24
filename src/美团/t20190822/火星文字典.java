@@ -8,28 +8,26 @@ public class 火星文字典 {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();
         String[] ss = s.split(" ");
-        int count=0;
-        for (String tmp:ss){
-            count+=tmp.length();    //总共的有效字母
+        int count = 0;
+        for (String tmp : ss) {
+            count += tmp.length();    //总共的有效字母
         }
         ArrayList<Character> res = new ArrayList<>();
-        int i = 0,k=0;
-        while (true){
+        int i = 0, k = 0;
+        while (true) {
             //首字母排序
             for (String t : ss) {
                 if (i < t.length()) {
                     k++;
-                    if (i==0){
-                        if (res.contains(t.charAt(i))&&(res.lastIndexOf(t.charAt(i))!=res.size()-1)){
+                    if (i == 0) {
+                        if (res.contains(t.charAt(i)) && (res.lastIndexOf(t.charAt(i)) != res.size() - 1)) {
                             System.out.println("invalid");
                             return;
-                        }
-                        else {
+                        } else {
                             if (res.contains(t.charAt(i))) continue;
                             else res.add(t.charAt(i));
                         }
-                    }
-                    else {
+                    } else {
 
                         if (res.contains(t.charAt(i))) continue;
                         else res.add(t.charAt(i));
@@ -37,9 +35,9 @@ public class 火星文字典 {
                 }
             }
             i++;
-            if (k>=count) break;
+            if (k >= count) break;
         }
-        for (int j=0;j<res.size();j++){
+        for (int j = 0; j < res.size(); j++) {
             System.out.print(res.get(j));
         }
     }

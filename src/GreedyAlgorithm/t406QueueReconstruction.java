@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * leetcode 406 Queue Reconstruction by Height
+ *
  * @author xjh 2019.02.28
  * 这道典型的算法题 有一定的难度 需要考虑同时考虑两个属性 h k
  */
@@ -15,7 +16,7 @@ public class t406QueueReconstruction {
         Arrays.sort(people, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
-                return o1[0]==o2[0]?o1[1]-o2[1]:o2[0]-o1[0];    //按照h降序 k升序进行排序
+                return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];    //按照h降序 k升序进行排序
             }
         });
         //同理 上面这条语句可缩写为： Arrays.sort(people,(o1,o2)->o1[0]==o2[0]?o1[1]-o2[1]:o2[0]-o1[0]);
@@ -45,12 +46,12 @@ public class t406QueueReconstruction {
     }
 
     public static void main(String[] args) {
-        t406QueueReconstruction xjh=new t406QueueReconstruction();
-        int[][] people={{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
-        int[][] res=xjh.reconstructQueue(people);
-        for (int i=0;i<res.length;i++){
-            for (int j=0;j<2;j++)
-                System.out.print(res[i][j]+",");
+        t406QueueReconstruction xjh = new t406QueueReconstruction();
+        int[][] people = {{7, 0}, {4, 4}, {7, 1}, {5, 0}, {6, 1}, {5, 2}};
+        int[][] res = xjh.reconstructQueue(people);
+        for (int i = 0; i < res.length; i++) {
+            for (int j = 0; j < 2; j++)
+                System.out.print(res[i][j] + ",");
             System.out.print("  ");
         }
     }

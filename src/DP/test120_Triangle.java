@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * leetcode 120 Triangle
+ *
  * @author xjh 2019.01.15
  * 这个题目就是之前写过的杨辉三角的题目 只不过输入换成了list
  */

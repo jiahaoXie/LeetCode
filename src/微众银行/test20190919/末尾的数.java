@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class 末尾的数 {
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         BigDecimal n = new BigDecimal(in.nextInt());
         int result = 1;

@@ -10,54 +10,55 @@ public class 表达式解析 {
 当然，你也可以不按照下面这个模板来作答，完全按照自己的想法来 ^-^
 ******************************开始写代码******************************/
     static String resolve(String expr) {
-        if(expr == null || expr.length() ==0){
+        if (expr == null || expr.length() == 0) {
             return "";
         }
         int length = expr.length();
         int left = 0;
         int right = 0;
 
-        for(int i = 0; i < length; i++){
-            if(expr.charAt(i) == '('){
+        for (int i = 0; i < length; i++) {
+            if (expr.charAt(i) == '(') {
                 left++;
             }
-            if(expr.charAt(i) == ')'){
+            if (expr.charAt(i) == ')') {
                 right++;
             }
         }
-        if(left !=right){
+        if (left != right) {
             return "";
         }
 
         Stack<Character> stack = new Stack<>();
         Queue<Character> queue = new LinkedList<>();
-        for(int i = 0; i < expr.length(); i++){
+        for (int i = 0; i < expr.length(); i++) {
             char charAt = expr.charAt(i);
-            if(charAt != ')'){
+            if (charAt != ')') {
                 stack.push(charAt);
-            }else {
+            } else {
                 queue.clear();
-                while(stack.peek() != '('){
+                while (stack.peek() != '(') {
                     queue.add(stack.pop());
                     continue;
                 }
                 stack.pop();
-                while(!queue.isEmpty()){
+                while (!queue.isEmpty()) {
                     stack.push(queue.poll());
                 }
             }
         }
         StringBuilder sss = new StringBuilder();
-        while(!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             sss.append(stack.pop());
         }
         sss.reverse();
         return sss.toString();
     }
+
     /******************************结束写代码******************************/
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String res;
 

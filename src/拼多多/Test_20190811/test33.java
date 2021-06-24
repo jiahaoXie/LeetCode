@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class test33 {
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        int n=in.nextInt();
-        int s=in.nextInt();
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int s = in.nextInt();
 
     }
 }

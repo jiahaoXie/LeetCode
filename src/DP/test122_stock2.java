@@ -5,13 +5,13 @@ package DP;
  */
 public class test122_stock2 {
     public int maxProfit(int[] prices) {
-        int profit=0;
-        for(int i=1;i<prices.length;i++){
-            if(prices[i]>prices[i-1]){
-                profit+=prices[i]-prices[i-1];
+        int profit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                profit += prices[i] - prices[i - 1];
             }
         }
-        return  profit;
+        return profit;
 
         //这里DP方法做出来的反而要差一些
         // int n=prices.length;

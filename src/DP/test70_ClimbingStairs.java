@@ -9,6 +9,7 @@ public class test70_ClimbingStairs {
     public int climbStairs(int n) {
         return climb_Stairs(0, n);
     }
+
     public int climb_Stairs(int i, int n) {
         if (i > n) {
             return 0;
@@ -24,6 +25,7 @@ public class test70_ClimbingStairs {
         int memo[] = new int[n + 1];
         return climb_Stairs(0, n, memo);
     }
+
     public int climb_Stairs(int i, int n, int memo[]) {
         if (i > n) {
             return 0;
@@ -57,12 +59,13 @@ public class test70_ClimbingStairs {
     //dp[i]=dp[i−1]+dp[i−2] 有这个简单的状态转换方程
     //这里采用 两个变量保存中间结果 代替DP方法中的状态转换表
     public static int climbStairs3(int n) {
-        if (n<=1) return 1;
-        int a=1,b=1;
-        int sum=0;
-        for (int i=2;i<=n;i++){
-            sum=a+b;
-            a=b;b=sum;
+        if (n <= 1) return 1;
+        int a = 1, b = 1;
+        int sum = 0;
+        for (int i = 2; i <= n; i++) {
+            sum = a + b;
+            a = b;
+            b = sum;
         }
         return sum;
     }

@@ -24,20 +24,20 @@ public class 运矿石 {
     }
 
     private static int solution(int[] a) {
-        int n=a.length;
-        int sum=0;
-        for (int i=0;i<n;i++){
-            sum+=a[i];
+        int n = a.length;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += a[i];
         }
-        int[][] dp=new int[n+1][sum/2+1];
-        for (int i=0;i<n;i++){
-            for (int j=1;j<=sum/2;j++){
-                dp[i+1][j]=dp[i][j];
-                if (a[i]<=j&&dp[i][j-a[i]]+a[i]>dp[i][j]){
-                    dp[i+1][j]=dp[i][j-a[i]]+a[i];
+        int[][] dp = new int[n + 1][sum / 2 + 1];
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= sum / 2; j++) {
+                dp[i + 1][j] = dp[i][j];
+                if (a[i] <= j && dp[i][j - a[i]] + a[i] > dp[i][j]) {
+                    dp[i + 1][j] = dp[i][j - a[i]] + a[i];
                 }
             }
         }
-        return sum-2*dp[n][sum/2];
+        return sum - 2 * dp[n][sum / 2];
     }
 }

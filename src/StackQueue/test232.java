@@ -3,7 +3,8 @@ package StackQueue;
 /**
  * leetcode 232 使用栈实现队列
  * 225 使用队列实现栈
- *采用负负得正的思想 两个换一个
+ * 采用负负得正的思想 两个换一个
+ *
  * @author xjh  2018.11.03
  */
 
@@ -62,5 +63,6 @@ class MyQueue {
         return s1.isEmpty() && s2.isEmpty();
     }
 }
+
 public class test232 {
 }

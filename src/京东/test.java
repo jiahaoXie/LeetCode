@@ -15,8 +15,8 @@ public class test {
 
 
         System.out.println(map);
-        List<Map.Entry<String,String>> list = new ArrayList<Map.Entry<String,String>>(map.entrySet());
-        Collections.sort(list,new Comparator<Map.Entry<String,String>>() {
+        List<Map.Entry<String, String>> list = new ArrayList<Map.Entry<String, String>>(map.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<String, String>>() {
             //升序排序
             public int compare(Map.Entry<String, String> o1,
                                Map.Entry<String, String> o2) {

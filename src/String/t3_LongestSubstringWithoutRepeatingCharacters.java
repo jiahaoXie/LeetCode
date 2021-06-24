@@ -6,6 +6,7 @@ import java.util.Map;
 /**
  * 在string中寻找 最长的无重复子串的长度
  * 利用滑动窗口的思想来解决问题
+ *
  * @author xjh 2019.05.13
  */
 public class t3_LongestSubstringWithoutRepeatingCharacters {
@@ -24,19 +25,19 @@ public class t3_LongestSubstringWithoutRepeatingCharacters {
 //        return res;
 
         //方法2 使用HashMap对元素进行数组下标映射 只需要i做移动 时间复杂度为O(n) 由于方法1
-        int n=s.length();
-        int res=0,i=0,j=0;
-        Map<Character,Integer> map=new HashMap<>();
-        for (;i<n;i++){
-            if (map.containsKey(s.charAt(i))) j=Math.max(map.get(s.charAt(i)),j);//得到上次字符出现的下标位置
-            res=Math.max(res,i-j+1);
-            map.put(s.charAt(i),i+1);
+        int n = s.length();
+        int res = 0, i = 0, j = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (; i < n; i++) {
+            if (map.containsKey(s.charAt(i))) j = Math.max(map.get(s.charAt(i)), j);//得到上次字符出现的下标位置
+            res = Math.max(res, i - j + 1);
+            map.put(s.charAt(i), i + 1);
         }
         return res;
     }
 
     public static void main(String[] args) {
-        t3_LongestSubstringWithoutRepeatingCharacters xjh=new t3_LongestSubstringWithoutRepeatingCharacters();
+        t3_LongestSubstringWithoutRepeatingCharacters xjh = new t3_LongestSubstringWithoutRepeatingCharacters();
         System.out.println(xjh.lengthOfLongestSubstring("dvdf"));
     }
 }

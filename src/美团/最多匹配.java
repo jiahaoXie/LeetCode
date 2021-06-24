@@ -4,29 +4,31 @@ import java.util.Scanner;
 
 /**
  * 美团第二题 字符串匹配问题
+ *
  * @author xjh 2019.04.23
  */
 public class 最多匹配 {
-    public static int count=0;
+    public static int count = 0;
+
     public static void main(String[] args) {
-        Scanner in=new Scanner(System.in);
-        String aa=in.nextLine();
-        String bb=in.nextLine();
-        char[] a=aa.toCharArray();
-        char[] b=bb.toCharArray();
-        search(a,b);
-        kmp(a,a.length,b,b.length);
+        Scanner in = new Scanner(System.in);
+        String aa = in.nextLine();
+        String bb = in.nextLine();
+        char[] a = aa.toCharArray();
+        char[] b = bb.toCharArray();
+        search(a, b);
+        kmp(a, a.length, b, b.length);
         System.out.println(count);
     }
 
     //BF算法 搜索 超时36%
-    public static void search(char[] S,char[] T){
+    public static void search(char[] S, char[] T) {
         int k = 0;
-        while (k<S.length){
-            int i=k;
+        while (k < S.length) {
+            int i = k;
             int j = 0;
-            while (j < T.length&&i<S.length) {
-                if (S[i] == T[j]||S[i]=='?') {
+            while (j < T.length && i < S.length) {
+                if (S[i] == T[j] || S[i] == '?') {
                     ++i;
                     ++j;
                 } else {
@@ -35,13 +37,15 @@ public class 最多匹配 {
                 }
             }
             if (j == T.length) count++;
-            if (i==S.length) break;
+            if (i == S.length) break;
             k++;
         }
     }
+
     //sunday算法
-    public static final int ASCII_SIZE=126;
-    public static void sunday(char[] a,char[] b) {
+    public static final int ASCII_SIZE = 126;
+
+    public static void sunday(char[] a, char[] b) {
         int[] move = new int[ASCII_SIZE];
         //主串参与匹配最末位字符移动到该位需要一定的位数
         /**
@@ -65,9 +69,9 @@ public class 最多匹配 {
             while (s <= a.length - b.length) {
                 //到达末尾之前
                 j = 0;    //每一次匹配之前初始化为0
-                while (a[s + j] == b[j]||a[s+j]=='?') {
+                while (a[s + j] == b[j] || a[s + j] == '?') {
                     ++j;
-                    if (j == b.length){
+                    if (j == b.length) {
                         count++;
                         break;
                     }
@@ -79,22 +83,22 @@ public class 最多匹配 {
     }
 
     //KMP算法
-    public static void kmp(char[] a,int n,char[] b,int m) {
+    public static void kmp(char[] a, int n, char[] b, int m) {
         //a,b分别是主串和模式串；n,m分別是主串和模式串的长度
         int[] next = getNexts(b, m);
 
-        int k = 0,i=0;
+        int k = 0, i = 0;
         while (k < a.length) {
 
             int j = 0;
             for (i = k; i < n; i++) {
-                while (j<m&&j > 0 && a[i] != b[j]) { //一直找到主串和模式串中不匹配的坏字符 也就是a[i]和b[j]
+                while (j < m && j > 0 && a[i] != b[j]) { //一直找到主串和模式串中不匹配的坏字符 也就是a[i]和b[j]
                     j = next[j - 1] + 1;
                 }
-                if (j<m&&(a[i] == b[j]||a[i]=='?')) ++j;
+                if (j < m && (a[i] == b[j] || a[i] == '?')) ++j;
                 if (j == m) count++;     //找到匹配模式串的了
             }
-            if (i==n) break;
+            if (i == n) break;
             k++;
         }
     }
@@ -102,17 +106,17 @@ public class 最多匹配 {
     /**
      * 构建next数组
      */
-    public static int[] getNexts(char[] b,int m){
+    public static int[] getNexts(char[] b, int m) {
         //b表示模式串，m表示模式串的长度
-        int[] next=new int[m];
-        next[0]=-1;
-        int k=-1;
-        for (int i=1;i<m;i++){
-            while (k!=-1&&b[k+1]!=b[i]){
-                k=next[k];
+        int[] next = new int[m];
+        next[0] = -1;
+        int k = -1;
+        for (int i = 1; i < m; i++) {
+            while (k != -1 && b[k + 1] != b[i]) {
+                k = next[k];
             }
-            if (b[k+1]==b[i]) ++k;
-            next[i]=k;
+            if (b[k + 1] == b[i]) ++k;
+            next[i] = k;
         }
 //        for (int i=0;i<next.length;i++)
 //            System.out.print(next[i]+" ");

@@ -3,6 +3,7 @@ package DP;
 /**
  * leetcode 343 Integer Break
  * 一条n长的绳子 剪成多段 使之它的乘积最大
+ *
  * @author xjh 2019.03.31
  */
 public class test343_IntegerBreak {
@@ -20,7 +21,7 @@ public class test343_IntegerBreak {
             // but these numbers can be further broken. so we have to compare 1 with dp[1], 7 with dp[7], 2 with dp[2], 6 with dp[6]...etc
             for (int j = 1; j <= i / 2; j++) {
                 // use Math.max(dp[i],....)  so dp[i] maintain the greatest value
-                dp[i] = Math.max(dp[i],Math.max(j, dp[j]) * Math.max(i - j, dp[i - j]));
+                dp[i] = Math.max(dp[i], Math.max(j, dp[j]) * Math.max(i - j, dp[i - j]));
             }
         }
         return dp[n];
